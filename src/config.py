@@ -5,6 +5,16 @@ Created on 2019/9/29 下午 01:58
 @author: Ivan Y.W.Chiu
 """
 
+class ProjectConfig():
+    NAME = ""  # your project name
+    DATA_BASE_PATH = "./data/hw3_data"  # the base folder path you want to load
+    CLASS_NUM = 1  # the number of class in the dataset used in this project. Need overide.
+    CLASS_NAME_LIST = []  # the list of the class names
+    IMAGE_WIDTH = 128
+    IMAGE_HEIGHT = 128
+    IMAGE_CHANNEL = 3
+    MANUAL_GPU_MEMORY_GROWTH = True
+
 
 class Config():
     # The name of your work:

@@ -9,6 +9,22 @@ Created on : 2019/9/27
 import numpy as np
 
 
+def tf_session_setting():
+    ############################################################
+    #  Session Setting
+    ############################################################
+    # If you face the error about convolution layer,
+    # use this block to enable the memory usage of GPU growth.
+    from keras.backend.tensorflow_backend import set_session
+    import tensorflow as tf
+
+    config = tf.ConfigProto()
+    config.gpu_options.allow_growth = True  # dynamically grow the memory used on the GPU
+    sess = tf.Session(config=config)
+    set_session(sess)  # set this TensorFlow session as the default session for Keras
+    return sess
+
+
 def batch_index(b_size, total):
     lid = []
     for i in range(total//b_size):
